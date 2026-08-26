@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notas Escobedo - D&C Tuxedos</title>
     
-    <!-- ICONO DE LA PESTAÑA DEL NAVEGADOR -->
     <link rel="icon" href="logo_dyc-removebg-preview.png" type="image/png">
     
-    <!-- LIBRERÍA PARA GENERAR PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     
     <style>
@@ -154,7 +152,7 @@
     <div class="container">
         <div class="header">
             <img src="logo_dyc-removebg-preview.png" alt="Logo D&C Tuxedos">
-            <h1>Dúo Tuxedos</h1>
+            <h1>D&C TUXEDOS</h1>
             <p>Sucursal Escobedo - Formulario de Renta</p>
         </div>
 
@@ -312,9 +310,8 @@
         const modal = document.getElementById('successModal');
         const inputFolio = document.getElementById('folioManual');
 
-        // !!!!!!!!! ATENCIÓN: PEGA AQUÍ TU NUEVA URL DEL SCRIPT DE ESCOBEDO !!!!!!!!!
-        const GOOGLE_SHEETS_URL = 'AQUI_VA_TU_NUEVA_URL';
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // URL DE GOOGLE APPS SCRIPT PARA ESCOBEDO
+        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwra3zA2y3M1UkLoP0yb8DLMm2Xlw0nn_eMPe-wee3RLgQJCvV_I2ySJydY3sVUb0MT/exec';
 
         async function fetchNextFolio() {
             inputFolio.placeholder = "Calculando...";
@@ -405,7 +402,7 @@
                     const saldoFinal = (parseFloat(data.importe || 0) - parseFloat(data.anticipo || 0)).toFixed(2);
                     
                     // --- LÓGICA DE WHATSAPP ---
-                    let texto = `*D&C(ESCOBEDO) - NOTA DE RENTA*\n\n`;
+                    let texto = `*D&C TUXEDOS (ESCOBEDO) - NOTA DE RENTA*\n\n`;
                     texto += `Hola *${data.nombre}*, gracias por tu preferencia. Aquí tienes el resumen de tu renta:\n\n`;
                     texto += `📄 *Folio:* ${result.folio}\n`;
                     
