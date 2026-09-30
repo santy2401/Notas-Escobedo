@@ -553,7 +553,7 @@
         <div class="header">
             <div class="header-top">
                 <div class="logo-section">
-                    <img src="./logo_dyc.png" alt="D&C Tuxedos" onerror="this.style.display='none'">
+                    <img src="logo.jpg" alt="D&C Tuxedos" onerror="this.style.display='none'">
                 </div>
                 <div class="title-section">
                     <h1>Renta y Venta de Trajes & Smoking</h1>
@@ -885,6 +885,7 @@
         const saldoInput = document.getElementById('saldo');
         const submitBtn = document.getElementById('submitBtn');
 
+        // URL DE GOOGLE APPS SCRIPT PARA ESCOBEDO
         const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwra3zA2y3M1UkLoP0yb8DLMm2Xlw0nn_eMPe-wee3RLgQJCvV_I2ySJydY3sVUb0MT/exec';
 
         // Actualizar fecha actual
@@ -964,14 +965,12 @@
             const data = Object.fromEntries(formData);
 
             try {
+                // AQUÍ ESTÁ EL CAMBIO CLAVE PARA EVITAR EL ERROR DE CORS
                 const response = await fetch(GOOGLE_SHEETS_URL, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: { 
-        'Content-Type': 'text/plain;charset=utf-8' // Cambiado de application/json
-    }
-});
-
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' } 
+                });
 
                 const result = await response.json();
                 
